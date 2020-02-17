@@ -1,0 +1,65 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.header{
+  --background: #4A151A;
+  --color: #DEDEDE;
+}
+.img-responsive {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+.button-green {
+  --background: #535f55;
+
+  --background-activated: #606d62;
+  --background-focused: #606d62;
+  --background-hover: #606d62;
+}
+.button-success {
+  --background: #66c376;
+
+  --background-activated: #6dd07e;
+  --background-focused: #6dd07e;
+  --background-hover: #6dd07e;
+}
+.button-danger {
+  --background: #c36666;
+
+  --background-activated: #d16e6e;
+  --background-focused: #d16e6e;
+  --background-hover: #d16e6e;
+}
+.button-info {
+  --background: #6681c3;
+
+  --background-activated: #6d8ad0;
+  --background-focused: #6d8ad0;
+  --background-hover: #6d8ad0;
+}

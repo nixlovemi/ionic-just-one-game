@@ -1,0 +1,74 @@
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="row-centered ion-no-padding">
+      <ion-col class="ion-no-padding card-row-even" size="2">
+        <div *ngFor="let card of arrCards; let i = index;">
+          <div
+            class="card-row ion-align-items-center ion-justify-content-center"
+            [ngClass]="{
+              'card-row-selected': i===idxGame,
+              'card-row-even': i%2 === 0,
+              'card-row-odd': i%2 !== 0
+            }"
+          >
+            <img [src]="arrCards[i].cardImg" />
+          </div>
+        </div>
+      </ion-col>
+      <ion-col class="ion-no-padding">
+        <div class="word-area" style="background-image: url(assets/bg-word-area.jpg);">
+          <div style="position: absolute; top: 10px; right: 10px;">
+            <img (click)="resetGame()" style="width: 4vh;" src="assets/close_red.png" />
+          </div>
+          <ion-grid>
+            <ion-row justify-content-center align-items-center class="row-centered">
+              <ion-grid>
+                <ion-row *ngIf="showWord" justify-content-center align-items-center style="text-align: center;">
+                  <p>
+                    <span style="font-size: 6vh; width: 100%; display: block; margin-bottom: 20px;">
+                      A palavra é:
+                    </span>
+                    <br />
+                    <span style="font-size: 10vh; width: 100%; display: block;">
+                      {{ arrCards[idxGame].name }}
+                    </span>
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="!showWord" justify-content-center align-items-center>
+                  <ion-button (click)="clickShowWord()" style="font-size: 5vh;" class="button button-green" shape="round">Exibir Palavra</ion-button>
+                </ion-row>
+              </ion-grid>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div class="button-area" style="background-image: url(assets/bg-buttom-area.jpg);">
+          <ion-grid class="ion-no-padding">
+            <ion-row class="row-centered ion-no-padding">
+              <ion-col class="ion-no-padding" size="4">
+                <ion-grid>
+                  <ion-row justify-content-center align-items-center class="row-centered" style="text-align: center;">
+                    <ion-button (click)="onCorrectWord()" *ngIf="showWord" class="button btn-check-answer button-success" shape="round">Acertou!</ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col class="ion-no-padding" size="4">
+                <ion-grid>
+                  <ion-row justify-content-center align-items-center class="row-centered" style="text-align: center;">
+                    <ion-button (click)="onWrongWord()" *ngIf="showWord" class="button btn-check-answer button-danger" shape="round">Errou!</ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col class="ion-no-padding" size="4">
+                <ion-grid>
+                  <ion-row justify-content-center align-items-center class="row-centered" style="text-align: center;">
+                    <ion-button (click)="onPassWord()" *ngIf="showWord" class="button btn-check-answer button-info" shape="round">Passou!</ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
