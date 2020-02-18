@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
 
   constructor(
-    private router: Router,
+    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
   }
 
   openGame() {
-    this.router.navigate(['just-one'], { skipLocationChange: true });
+    this.navCtrl.navigateForward('/just-one');
   }
 
   openRules() {
-    this.router.navigate(['rules']);
+    this.navCtrl.navigateForward('/rules');
   }
 
 }

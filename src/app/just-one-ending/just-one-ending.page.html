@@ -1,4 +1,28 @@
 <ion-content>
+  <ion-grid class="row-centered">
+    <ion-row class="row-centered ion-text-center ion-justify-content-center ion-align-items-center">
+      <p class="title">
+        <span>
+          Pontuação final:
+        </span>
+        <span>
+          {{ totalPoints }} pontos
+        </span>
+        <span class="sub-title">
+          "{{ finalText }}"
+        </span>
+        <span>
+          <ion-button (click)="resetGame()" class="button button-green" shape="round">Voltar ao Início</ion-button>
+        </span>
+      </p>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+<!--
+<ion-content>
   <ion-grid style="height: 100%; background-image: url(assets/bg-word-area.jpg);">
     <ion-row justify-content-center align-items-center class="row-centered">
       <ion-grid>
@@ -19,3 +43,4 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+-->

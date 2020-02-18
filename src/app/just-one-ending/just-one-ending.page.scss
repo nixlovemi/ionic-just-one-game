@@ -2,16 +2,30 @@
     height: 100%;
 }
 .title {
-    font-size: 8vh;
+    font-size: 4em;
     text-align: center;
-}
-.sub-title {
-    font-size: 5vh;
-    text-align: center;
-}
-.button {
-    font-size: 4vh; 
+
+    span {
+        display: block;
+        width: 100%;
+    }
+    span:first-child {
+        font-size: 0.6em;
+        text-decoration: underline;
+    }
+    span.sub-title {
+        margin-top: 30px;
+        font-size: 0.6em;
+        margin-bottom: 30px;
+    }
+    .button {
+        font-size: 0.5em; 
+    }
 }
 p {
     margin: 10px 0;
+}
+ion-content {
+    height: 100%;
+    --background: url('../../assets/bg-paper-green.png');
 }

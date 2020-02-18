@@ -2,7 +2,7 @@
 
 platform :ios, '10.0'
 
-target 'Just One - App' do
-	project 'Just One - App.xcodeproj'
+target 'Uma Palavra' do
+	project 'Uma Palavra.xcodeproj'
 
 end

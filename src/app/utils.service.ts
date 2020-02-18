@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertController, LoadingController, Events, Platform } from '@ionic/angular';
+import { AlertController, LoadingController, Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Injectable({
@@ -13,7 +13,6 @@ export class UtilsService {
     private alertCtr: AlertController,
     private loadingCtr: LoadingController,
     private storage: Storage,
-    private events: Events,
     public platform: Platform,
   ) { }
 
@@ -38,7 +37,7 @@ export class UtilsService {
   }
 
   getAppVersion() {
-    return '1.0.0';
+    return '1.1.0';
   }
 
   getStrFinalPoints(totalPoints: number) {

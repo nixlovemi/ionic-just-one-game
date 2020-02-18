@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { UtilsService } from '../utils.service';
 
 @Component({
@@ -15,19 +15,24 @@ export class JustOnePage implements OnInit {
   arrCards            = [];
   idxGame             = 0;
   gamePoints          = 0;
+  errorPoints         = 0;
   private cCardImg    = 'assets/card.jpg';
   private cCardImgOk  = 'assets/card-ok.jpg';
   private cCardImgErr = 'assets/card-err.jpg';
-  private nbrOfCards  = 13;
+  nbrOfCards          = 13;
 
   constructor(
-    private router: Router,
+    private navCtrl: NavController,
     private utilsSrv: UtilsService,
   ) { }
 
   ngOnInit() {
     this.globalWords    = this.utilsSrv.getGlobalWords();
     this.totGlobalWords = this.globalWords.length;
+    if ( this.totGlobalWords <= 0 ) {
+      this.navCtrl.navigateBack('/');
+      return;
+    }
   }
 
   ionViewWillEnter() {
@@ -83,14 +88,17 @@ export class JustOnePage implements OnInit {
       this.gamePoints++;
     } else {
       this.changeCardImageErr(currentIdx);
+      this.errorPoints++;
+
       if ( response === 'ERR' && this.idxGame < this.arrCards.length ) {
         this.changeCardImageErr(currentIdx + 1);
         this.idxGame++;
+        this.errorPoints++;
       }
     }
 
     if ( this.idxGame >= this.arrCards.length ) {
-      this.router.navigate(['just-one-ending/' + this.gamePoints], { skipLocationChange: true });
+      this.navCtrl.navigateForward('/just-one-ending/' + this.gamePoints);
     }
   }
 
@@ -116,7 +124,7 @@ export class JustOnePage implements OnInit {
       }, {
         text: 'Sim!',
         handler: () => {
-          this.router.navigate([''], { skipLocationChange: true });
+          this.navCtrl.navigateBack('/');
         }
       }
     ]);

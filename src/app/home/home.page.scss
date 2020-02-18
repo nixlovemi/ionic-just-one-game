@@ -2,12 +2,20 @@
     height: 100%;
 }
 .title {
-    font-size: 8vh;
+    font-size: 15vw;
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 .button {
-    font-size: 4vh; 
+    font-size: 6vw;
+    width: 40vw;
 }
 ion-col {
     text-align: center;
+}
+#main-grid {
+    height: 100%;
+    /*background-image: url('../../assets/bg-word-area.jpg');*/
+    background-image: url('../../assets/bg-paper.jpg');
 }

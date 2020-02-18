@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from '../utils.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-just-one-ending',
@@ -12,9 +13,9 @@ export class JustOneEndingPage implements OnInit {
   finalText   = '';
 
   constructor(
-    private router: Router,
     private actRoute: ActivatedRoute,
     private utilsSrv: UtilsService,
+    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
@@ -31,7 +32,7 @@ export class JustOneEndingPage implements OnInit {
   }
 
   resetGame() {
-    this.router.navigate([''], { skipLocationChange: true });
+    this.navCtrl.navigateBack('/');
   }
 
 }

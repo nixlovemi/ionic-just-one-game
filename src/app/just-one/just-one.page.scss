@@ -1,41 +1,64 @@
-.row-centered {
-    height: 100%;
+ion-content {
+    --background: url('../../assets/bg-paper-green.png');
 }
-.card-row {
-    width: 100%;
-    height: 7.692307%;
-    padding: 5%;
-    display: block;
-    overflow: hidden;
+#header-col-word-cnt {
+    color: #002c3b;
 }
-.card-row-even {
-    background-color: #d4e3e8;
+#header-col-correct-points {
+    color: #033b00;
 }
-.card-row-odd {
-    background-color: #cfdde6;
+#header-col-wrong-points {
+    color: #3b0300;
 }
-.word-area {
-    width: 100%;
-    height: 80%;
+#header-col-exit-game {
+
+    img {
+        width: 1.2em;
+        position: relative;
+    }
 }
-.button-area {
-    width: 100%;
-    height: 20%;
-}
-.card-row img {
-    width: 80%;
-    height: 100%;
+.header-img-points {
     position: relative;
-    top: 12%;
-    left: 13%;
+    top: 1px;
+    width: 0.8em;
 }
-ion-grid, ion-row {
+#row-header {
+    background-color: #FFF;
+    border-left: solid 2px #e1c8f0;
+    border-bottom: solid 2px #e1c8f0;
+    font-size: 1.4em;
+
+    ion-col {
+        padding-top: 14px;
+    }
+}
+#main-grid {
     height: 100%;
-}
-.card-row-selected {
-    background-image: none;
-    background-color: #f3f480 !important;
-}
-.btn-check-answer {
-    font-size: 2.5vh;
+    display: flex;
+    flex-flow: column;
+
+    #row-word {
+        flex-grow: 1;
+
+        p {
+            width: 100%;
+        }
+        #the-word-is {
+            font-size: 8vw;
+            width: 100%;
+            display: block;
+        }
+        #the-word {
+            font-size: 14.5vw;
+            width: 100%;
+            display: block;
+        }
+        #btn-show-word {
+            font-size: 2.3em;
+        }
+        .btn-check-answer {
+            font-size: 4.5vw;
+            margin: 0 0.2em;
+        }
+    }
 }

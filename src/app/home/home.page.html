@@ -1,13 +1,13 @@
 <ion-content>
-  <ion-grid style="height: 100%; background-image: url(assets/bg-word-area.jpg);">
-    <ion-row justify-content-center align-items-center class="row-centered">
+  <ion-grid id="main-grid">
+    <ion-row class="row-centered ion-align-items-center ion-justify-content-center">
       <ion-grid>
-        <ion-row justify-content-center align-items-center class="row-centered">
-          <h1 class="title">Jogo "Só Uma"</h1>
+        <ion-row class="row-centered ion-align-items-center ion-justify-content-center">
+          <h1 class="title">Uma Palavra</h1>
         </ion-row>
-        <ion-row justify-content-center align-items-center class="row-centered">
+        <ion-row class="row-centered ion-align-items-center ion-justify-content-center">
           <ion-col>
-            <ion-button (click)="openGame()" class="button button-green" shape="round">INICIAR JOGO</ion-button>
+            <ion-button (click)="openGame()" class="button button-green" shape="round">INICIAR</ion-button>
           </ion-col>
           <ion-col>
             <ion-button (click)="openRules()" class="button button-info" shape="round">REGRAS</ion-button>
