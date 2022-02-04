@@ -1,0 +1,2 @@
+[BUILD]
+ionic build --prod --public-url=/app/

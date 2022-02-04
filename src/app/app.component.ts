@@ -30,7 +30,13 @@ export class AppComponent {
   }
 
   private loadWords() {
-    fetch('../../assets/json-words.json').then(res => res.json()).then(jsonCards => {
+    let isApp = (!document.URL.startsWith('http') || document.URL.startsWith('http://localhost:8080'));
+    let filePath = '../../assets/json-words.json';
+    if (!isApp) {
+      filePath = 'assets/json-words.json';
+    }
+
+    fetch(filePath).then(res => res.json()).then(jsonCards => {
       this.utilsSrv.setGlobalWords(jsonCards);
     });
   }
